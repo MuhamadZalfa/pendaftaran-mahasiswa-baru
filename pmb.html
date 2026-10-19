@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penerimaan Mahasiswa Baru 2026/2027</title>
+
+  <style>
+    /*  1. VARIABEL WARNA  */
+    :root {
+      --navy: #0f2a52;
+      --navy-dark: #0a1d3a;
+      --gold: #c9a227;
+      --gold-dark: #a8861a;
+      --bg: #f3f4f6;
+      --paper: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d9dde3;
+      --danger: #c62828;
+      --ok: #2e7d32;
+    }
+
+    /* =========================================================
+       2. DASAR
+       ========================================================= */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* =========================================================
+       3. HEADER
+       ========================================================= */
+    .topbar {
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      color: #c8d2e3;
+      background: var(--navy-dark);
+    }
+
+    .topbar div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header.site {
+      color: #ffffff;
+      background: var(--navy);
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 22px 16px;
+    }
+
+    .logo {
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      background: var(--gold);
+      box-shadow: 0 0 0 3px var(--navy), 0 0 0 5px var(--gold);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .brand p {
+      margin: 2px 0 0;
+      font-size: 0.88rem;
+      color: #d5dcea;
+    }
+
+    /* =========================================================
+       4. HALAMAN & BAGIAN FORM
+       ========================================================= */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 36px 40px;
+      background: var(--paper);
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro {
+      margin: 0 0 26px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      color: #4b4426;
+      background: #fbf7e6;
+      border-left: 4px solid var(--gold);
+    }
+
+    .intro b {
+      color: var(--danger);
+    }
+
+    fieldset {
+      min-width: 0;
+      margin: 0 0 34px;
+      padding: 0;
+      border: 0;
+    }
+
+    legend {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      float: left;
+      width: 100%;
+      margin: 0 0 18px;
+      padding: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      border-bottom: 2px solid var(--navy);
+    }
+
+    legend .no {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      background: var(--navy);
+    }
+
+    .grid {
+      clear: both;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 24px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    /* =========================================================
+       5. LABEL & INPUT
+       ========================================================= */
+    label,
+    .lbl {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .req::after {
+      content: " *";
+      color: var(--danger);
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 9px 11px;
+      font: inherit;
+      color: var(--text);
+      background: #ffffff;
+      border: 1px solid #b8bfc9;
+      border-radius: 4px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #9ca3af;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 0;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(15, 42, 82, 0.15);
+    }
+
+    input[readonly] {
+      color: #4b5563;
+      background: #eef0f3;
+    }
+
+    textarea {
+      min-height: 84px;
+      resize: vertical;
+    }
+
+    /* Input file */
+    input[type="file"] {
+      width: 100%;
+      padding: 6px;
+      font: inherit;
+      font-size: 0.88rem;
+      background: #fafbfc;
+      border: 1px dashed #b8bfc9;
+      border-radius: 4px;
+    }
+
+    input[type="file"]::file-selector-button {
+      margin-right: 10px;
+      padding: 6px 12px;
+      font: inherit;
+      font-size: 0.82rem;
+      color: #ffffff;
+      background: var(--navy);
+      border: 0;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    input[type="file"]::file-selector-button:hover {
+      background: var(--navy-dark);
+    }
+
+    /* Radio button */
+    .radio-row {
+      display: flex;
+      gap: 24px;
+      padding: 8px 0;
+    }
+
+    .radio-row label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .radio-row input {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--navy);
+    }
+
+    /* Petunjuk & pesan error */
+    .hint {
+      margin-top: 3px;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .err {
+      min-height: 1em;
+      margin-top: 3px;
+      font-size: 0.78rem;
+      color: var(--danger);
+    }
+
+    .invalid {
+      background: #fff6f6;
+      border-color: var(--danger) !important;
+    }
+
+    /* =========================================================
+       6. TOMBOL KIRIM
+       ========================================================= */
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .actions small {
+      max-width: 480px;
+      color: var(--muted);
+    }
+
+    button {
+      padding: 12px 32px;
+      font: inherit;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: var(--navy-dark);
+      background: var(--gold);
+      border: 0;
+      border-radius: 4px;
+      box-shadow: 0 2px 0 var(--gold-dark);
+      cursor: pointer;
+      transition: background 0.15s, transform 0.05s;
+    }
+
+    button:hover {
+      background: #d8b231;
+    }
+
+    button:active {
+      transform: translateY(1px);
+      box-shadow: none;
+    }
+
+    /* =========================================================
+       7. RINGKASAN ERROR / SUKSES
+       ========================================================= */
+    #summary {
+      display: none;
+      margin-bottom: 22px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      color: #7f1d1d;
+      background: #fdf1f1;
+      border: 1px solid #e0a3a3;
+      border-left: 5px solid var(--danger);
+      border-radius: 4px;
+    }
+
+    #summary ul {
+      margin: 6px 0 0;
+      padding-left: 20px;
+    }
+
+    #summary.show {
+      display: block;
+    }
+
+    #summary.success {
+      display: block;
+      color: #1b5e20;
+      background: #f1faf2;
+      border-color: #a5d2a8;
+      border-left-color: var(--ok);
+    }
+
+    /* =========================================================
+       8. FOOTER
+       ========================================================= */
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px 16px 36px;
+      font-size: 0.8rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* =========================================================
+       9. RESPONSIF (HP / TABLET)
+       ========================================================= */
+    @media (max-width: 700px) {
+      main {
+        padding: 22px 18px 32px;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand h1 {
+        font-size: 1.15rem;
+      }
+
+      .logo {
+        width: 46px;
+        height: 46px;
+        font-size: 1.2rem;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+ 
+
+  <header class="site">
+    <div class="brand">
+      <div class="logo">Z</div>
+      <div>
+        <h1>Penerimaan Mahasiswa Baru</h1>
+        <p>Tahun Akademik 2026/2027 &middot; Formulir Pendaftaran Online</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= ISI FORM ================= -->
+  <main>
+
+    <p class="intro">
+      Isi seluruh data sesuai dokumen resmi. Kolom bertanda <b>*</b> wajib diisi.
+    </p>
+
+    <div id="summary" role="alert"></div>
+
+    <form id="pmbForm" novalidate>
+
+      <!-- ========== 1. DATA IDENTITAS DIRI ========== -->
+      <fieldset>
+        <legend><span class="no">1</span>Data Identitas Diri</legend>
+
+        <div class="grid">
+
+          <div class="field full">
+            <label class="req" for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" data-label="Nama lengkap" required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="nik">NIK</label>
+            <input
+              type="text"
+              id="nik"
+              name="nik"
+              data-label="NIK"
+              inputmode="numeric"
+              maxlength="16"
+              pattern="\d{16}"
+              required>
+            <div class="hint">16 digit angka sesuai KTP/KK</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="tempat">Tempat Lahir</label>
+            <input type="text" id="tempat" name="tempat" data-label="Tempat lahir" required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="tgl">Tanggal Lahir</label>
+            <input type="date" id="tgl" name="tgl" data-label="Tanggal lahir" required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field" data-group="jk">
+            <span class="lbl req">Jenis Kelamin</span>
+            <div class="radio-row">
+              <label><input type="radio" name="jk" value="L" required> Laki-laki</label>
+              <label><input type="radio" name="jk" value="P"> Perempuan</label>
+            </div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="agama">Agama</label>
+            <select id="agama" name="agama" data-label="Agama" required>
+              <option value="">-- Pilih --</option>
+              <option>Islam</option>
+              <option>Kristen</option>
+              <option>Katolik</option>
+              <option>Hindu</option>
+              <option>Buddha</option>
+              <option>Konghucu</option>
+            </select>
+            <div class="err"></div>
+          </div>
+
+          <div class="field full">
+            <label class="req" for="alamat">Alamat Domisili</label>
+            <textarea id="alamat" name="alamat" data-label="Alamat domisili" required></textarea>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="hp">Nomor Kontak (HP/WhatsApp)</label>
+            <input
+              type="tel"
+              id="hp"
+              name="hp"
+              data-label="Nomor kontak"
+              data-type="phone"
+              placeholder="08xxxxxxxxxx"
+              pattern="(\+62|62|0)8[0-9]{8,12}"
+              required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              data-label="Email"
+              placeholder="nama@email.com"
+              required>
+            <div class="err"></div>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- ========== 2. DATA PENDIDIKAN ASAL ========== -->
+      <fieldset>
+        <legend><span class="no">2</span>Data Pendidikan Asal</legend>
+
+        <div class="grid">
+
+          <div class="field">
+            <label class="req" for="sekolah">Nama Sekolah</label>
+            <input type="text" id="sekolah" name="sekolah" data-label="Nama sekolah" required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="npsn">NPSN</label>
+            <input
+              type="text"
+              id="npsn"
+              name="npsn"
+              data-label="NPSN"
+              inputmode="numeric"
+              maxlength="8"
+              pattern="\d{8}"
+              required>
+            <div class="hint">8 digit angka</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="jurusan">Jurusan / Program</label>
+            <select id="jurusan" name="jurusan" data-label="Jurusan" required>
+              <option value="">-- Pilih --</option>
+              <option>MIPA</option>
+              <option>IPS</option>
+              <option>Bahasa</option>
+              <option>SMK</option>
+              <option>Lainnya</option>
+            </select>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="lulus">Tahun Lulus</label>
+            <input
+              type="number"
+              id="lulus"
+              name="lulus"
+              data-label="Tahun lulus"
+              min="2000"
+              max="2026"
+              placeholder="2026"
+              required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label for="rapor">Rata-rata Nilai Rapor</label>
+            <input
+              type="number"
+              id="rapor"
+              name="rapor"
+              data-label="Nilai rapor"
+              min="0"
+              max="100"
+              step="0.01"
+              placeholder="contoh: 86.50">
+            <div class="hint">Opsional, skala 0–100</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label for="utbk">Skor UTBK</label>
+            <input
+              type="number"
+              id="utbk"
+              name="utbk"
+              data-label="Skor UTBK"
+              min="0"
+              max="1000"
+              step="0.01"
+              placeholder="contoh: 650.25">
+            <div class="hint">Opsional, skala 0–1000</div>
+            <div class="err"></div>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- ========== 3. DATA ORANG TUA / WALI ========== -->
+      <fieldset>
+        <legend><span class="no">3</span>Data Orang Tua / Wali</legend>
+
+        <div class="grid">
+
+          <div class="field">
+            <label class="req" for="ayah">Nama Ayah</label>
+            <input type="text" id="ayah" name="ayah" data-label="Nama ayah" required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="ibu">Nama Ibu</label>
+            <input type="text" id="ibu" name="ibu" data-label="Nama ibu" required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="kerja">Pekerjaan Orang Tua</label>
+            <input type="text" id="kerja" name="kerja" data-label="Pekerjaan orang tua" required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="gaji">Penghasilan Orang Tua (per bulan)</label>
+            <select id="gaji" name="gaji" data-label="Penghasilan orang tua" required>
+              <option value="">-- Pilih --</option>
+              <option>&lt; Rp5.000.000</option>
+              <option>Rp5.000.000 – Rp10.000.000</option>
+              <option>&gt; Rp10.000.000</option>
+            </select>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="hpOrtu">Nomor Telepon Orang Tua</label>
+            <input
+              type="tel"
+              id="hpOrtu"
+              name="hpOrtu"
+              data-label="Telepon orang tua"
+              data-type="phone"
+              pattern="(\+62|62|0)8[0-9]{8,12}"
+              required>
+            <div class="err"></div>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- ========== 4. PILIHAN PENDAFTARAN ========== -->
+      <fieldset>
+        <legend><span class="no">4</span>Pilihan Pendaftaran</legend>
+
+        <div class="grid">
+
+          <div class="field">
+            <label class="req" for="jalur">Jalur Seleksi</label>
+            <select id="jalur" name="jalur" data-label="Jalur seleksi" required>
+              <option value="">-- Pilih --</option>
+              <option>Jalur Reguler Gelombang 1</option>
+              <option>Jalur Reguler Gelombang 2</option>
+              <option>Jalur Prestasi (Rapor)</option>
+              <option>Jalur Beasiswa</option>
+            </select>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="lokasi">Lokasi Ujian</label>
+            <select id="lokasi" name="lokasi" data-label="Lokasi ujian" required>
+              <option value="">-- Pilih --</option>
+              <option>Kampus Pusat</option>
+              <option>Kampus Cabang</option>
+              <option>Ujian Online (CBT)</option>
+            </select>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="prodi1">Program Studi Pilihan 1</label>
+            <select id="prodi1" name="prodi1" data-label="Prodi pilihan 1" required>
+              <option value="">-- Pilih --</option>
+              <option>Teknik Informatika</option>
+              <option>Sistem Informasi</option>
+              <option>Manajemen</option>
+              <option>Akuntansi</option>
+              <option>Teknik Sipil</option>
+              <option>Hukum</option>
+            </select>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="prodi2">Program Studi Pilihan 2</label>
+            <select id="prodi2" name="prodi2" data-label="Prodi pilihan 2" required>
+              <option value="">-- Pilih --</option>
+              <option>Teknik Informatika</option>
+              <option>Sistem Informasi</option>
+              <option>Manajemen</option>
+              <option>Akuntansi</option>
+              <option>Teknik Sipil</option>
+              <option>Hukum</option>
+            </select>
+            <div class="hint">Tidak boleh sama dengan pilihan 1</div>
+            <div class="err"></div>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- ========== 5. DOKUMEN DAN BERKAS UNGGAHAN ========== -->
+      <fieldset>
+        <legend><span class="no">5</span>Dokumen dan Berkas Unggahan</legend>
+
+        <div class="grid">
+
+          <div class="field">
+            <label class="req" for="foto">Pasfoto Resmi</label>
+            <input
+              type="file"
+              id="foto"
+              name="foto"
+              data-label="Pasfoto"
+              accept=".jpg,.jpeg,.png"
+              data-ext="jpg,jpeg,png"
+              required>
+            <div class="hint">JPG/PNG, maks. 2 MB</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="ktp">Scan KTP</label>
+            <input
+              type="file"
+              id="ktp"
+              name="ktp"
+              data-label="Scan KTP"
+              accept=".jpg,.jpeg,.png,.pdf"
+              data-ext="jpg,jpeg,png,pdf"
+              required>
+            <div class="hint">JPG/PNG/PDF, maks. 2 MB</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="kk">Scan Kartu Keluarga (KK)</label>
+            <input
+              type="file"
+              id="kk"
+              name="kk"
+              data-label="Scan KK"
+              accept=".jpg,.jpeg,.png,.pdf"
+              data-ext="jpg,jpeg,png,pdf"
+              required>
+            <div class="hint">JPG/PNG/PDF, maks. 2 MB</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="ijazah">Rapor / Ijazah</label>
+            <input
+              type="file"
+              id="ijazah"
+              name="ijazah"
+              data-label="Rapor/Ijazah"
+              accept=".jpg,.jpeg,.png,.pdf"
+              data-ext="jpg,jpeg,png,pdf"
+              required>
+            <div class="hint">JPG/PNG/PDF, maks. 2 MB</div>
+            <div class="err"></div>
+          </div>
+
+          <div class="field full">
+            <label for="sertifikat">Sertifikat Pendukung (opsional)</label>
+            <input
+              type="file"
+              id="sertifikat"
+              name="sertifikat"
+              data-label="Sertifikat"
+              accept=".jpg,.jpeg,.png,.pdf"
+              data-ext="jpg,jpeg,png,pdf">
+            <div class="hint">JPG/PNG/PDF, maks. 2 MB</div>
+            <div class="err"></div>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- ========== 6. DATA TRANSAKSI PEMBAYARAN ========== -->
+      <fieldset>
+        <legend><span class="no">6</span>Data Transaksi Pembayaran</legend>
+
+        <div class="grid">
+
+          <div class="field">
+            <label class="req" for="metode">Metode Pembayaran</label>
+            <select id="metode" name="metode" data-label="Metode pembayaran" required>
+              <option value="">-- Pilih --</option>
+              <option value="88908">Virtual Account Bank Mandiri</option>
+              <option value="8808">Virtual Account Bank BNI</option>
+              <option value="26215">Virtual Account Bank BRI</option>
+              <option value="39358">Virtual Account Bank BCA</option>
+            </select>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label class="req" for="va">Kode Pembayaran / VA</label>
+            <input
+              type="text"
+              id="va"
+              name="va"
+              data-label="Kode VA"
+              placeholder="Terisi otomatis setelah memilih metode"
+              readonly
+              required>
+            <div class="err"></div>
+          </div>
+
+          <div class="field">
+            <label for="biaya">Nominal Biaya Pendaftaran</label>
+            <input type="text" id="biaya" name="biaya" value="Rp350.000" readonly>
+          </div>
+
+          <div class="field">
+            <label class="req" for="bukti">Bukti Transaksi</label>
+            <input
+              type="file"
+              id="bukti"
+              name="bukti"
+              data-label="Bukti transaksi"
+              accept=".jpg,.jpeg,.png,.pdf"
+              data-ext="jpg,jpeg,png,pdf"
+              required>
+            <div class="hint">JPG/PNG/PDF, maks. 2 MB</div>
+            <div class="err"></div>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- ========== TOMBOL KIRIM ========== -->
+      <div class="actions">
+        <small>
+          Pastikan seluruh data sudah benar sebelum dikirim.
+          Data yang telah dikirim tidak dapat diubah sendiri.
+        </small>
+        <button type="submit">Kirim Pendaftaran</button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    &copy; 2026 Panitia Penerimaan Mahasiswa Baru. Seluruh hak dilindungi.
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    (function () {
+      "use strict";
+
+      /* ---------- Referensi & konfigurasi ---------- */
+      const form = document.getElementById("pmbForm");
+      const summary = document.getElementById("summary");
+      const MAX_MB = 2;
+
+      const $ = (id) => document.getElementById(id);
+
+      /* ---------- Menampilkan / menghapus pesan error pada satu kolom ---------- */
+      function setError(el, msg) {
+        const box = el.closest(".field");
+        box.querySelector(".err").textContent = msg || "";
+        if (el.type !== "radio") {
+          el.classList.toggle("invalid", !!msg);
+        }
+      }
+
+      /* ---------- Kode VA otomatis saat metode pembayaran dipilih ---------- */
+      $("metode").addEventListener("change", function () {
+        if (!this.value) {
+          $("va").value = "";
+          return;
+        }
+
+        const nik = $("nik").value.replace(/\D/g, "");
+        const tail = nik.length >= 11
+          ? nik.slice(-11)
+          : String(Math.floor(Math.random() * 1e11)).padStart(11, "0");
+
+        $("va").value = this.value + tail;
+        setError($("va"), "");
+      });
+
+      /* ---------- NIK & NPSN hanya boleh angka ---------- */
+      ["nik", "npsn"].forEach((id) => {
+        $(id).addEventListener("input", (e) => {
+          e.target.value = e.target.value.replace(/\D/g, "");
+        });
+      });
+
+      /* ---------- Validasi satu kolom: mengembalikan teks error ("" jika valid) ---------- */
+      function validateField(el) {
+        const label = el.dataset.label || el.name;
+        const val = el.value.trim();
+
+        // Input file
+        if (el.type === "file") {
+          const file = el.files[0];
+          if (!file) {
+            return el.required ? label + " wajib diunggah." : "";
+          }
+
+          const ext = file.name.split(".").pop().toLowerCase();
+          if (!el.dataset.ext.split(",").includes(ext)) {
+            return "Format file harus: " + el.dataset.ext.toUpperCase().replace(/,/g, ", ") + ".";
+          }
+          if (file.size > MAX_MB * 1024 * 1024) {
+            return "Ukuran file maksimal " + MAX_MB + " MB.";
+          }
+          return "";
+        }
+
+        // Wajib diisi
+        if (el.required && !val) return label + " wajib diisi.";
+        if (!val) return "";
+
+        // Aturan khusus per kolom
+        if (el.id === "nik" && !/^\d{16}$/.test(val)) {
+          return "NIK harus tepat 16 digit angka.";
+        }
+        if (el.id === "npsn" && !/^\d{8}$/.test(val)) {
+          return "NPSN harus 8 digit angka.";
+        }
+        if (el.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val)) {
+          return "Format email tidak valid.";
+        }
+        if (el.dataset.type === "phone" && !/^(\+62|62|0)8[0-9]{8,12}$/.test(val.replace(/[\s-]/g, ""))) {
+          return "Nomor telepon tidak valid (contoh: 081234567890).";
+        }
+        if (el.type === "date" && new Date(val) > new Date()) {
+          return "Tanggal lahir tidak boleh di masa depan.";
+        }
+        if (el.type === "number") {
+          const n = parseFloat(val);
+          if (isNaN(n)) return label + " harus berupa angka.";
+          if (el.min !== "" && n < +el.min) return label + " minimal " + el.min + ".";
+          if (el.max !== "" && n > +el.max) return label + " maksimal " + el.max + ".";
+        }
+        if (el.id === "prodi2" && val === $("prodi1").value) {
+          return "Pilihan prodi 2 tidak boleh sama dengan pilihan 1.";
+        }
+
+        return "";
+      }
+
+      /* ---------- Validasi seluruh form ---------- */
+      function validateAll() {
+        const errors = [];
+        let firstBad = null;
+
+        form.querySelectorAll("input:not([type=radio]), select, textarea").forEach((el) => {
+          if (el.readOnly && el.id === "biaya") return;
+
+          const msg = validateField(el);
+          setError(el, msg);
+
+          if (msg) {
+            errors.push(msg);
+            firstBad = firstBad || el;
+          }
+        });
+
+        // Radio jenis kelamin
+        const jkGroup = form.querySelector('[data-group="jk"]');
+        const picked = form.querySelector('input[name="jk"]:checked');
+        jkGroup.querySelector(".err").textContent = picked ? "" : "Jenis kelamin wajib dipilih.";
+
+        if (!picked) {
+          errors.push("Jenis kelamin wajib dipilih.");
+          firstBad = firstBad || jkGroup.querySelector("input");
+        }
+
+        return { errors, firstBad };
+      }
+
+      /* ---------- Validasi langsung saat pengguna mengisi ---------- */
+      form.addEventListener("change", (e) => {
+        if (e.target.name === "jk") {
+          form.querySelector('[data-group="jk"] .err').textContent = "";
+          return;
+        }
+        if (e.target.matches("input, select, textarea") && !e.target.readOnly) {
+          setError(e.target, validateField(e.target));
+        }
+      });
+
+      form.addEventListener("focusout", (e) => {
+        if (
+          e.target.matches("input:not([type=radio]):not([type=file]), textarea") &&
+          !e.target.readOnly
+        ) {
+          setError(e.target, validateField(e.target));
+        }
+      });
+
+      /* ---------- Saat tombol "Kirim Pendaftaran" ditekan ---------- */
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const { errors, firstBad } = validateAll();
+        summary.className = "";
+
+        // Ada isian yang salah / kosong
+        if (errors.length) {
+          summary.classList.add("show");
+          summary.innerHTML =
+            "<b>Pendaftaran belum dapat dikirim.</b> Terdapat " + errors.length +
+            " isian yang perlu diperbaiki:<ul>" +
+            errors.map((m) => "<li>" + m + "</li>").join("") +
+            "</ul>";
+
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          if (firstBad) {
+            setTimeout(() => firstBad.focus({ preventScroll: true }), 300);
+          }
+          return;
+        }
+
+        // Semua valid.
+        // Untuk kirim ke server, gunakan: fetch("URL", { method: "POST", body: new FormData(form) })
+        summary.className = "success";
+        summary.innerHTML =
+          "<b>Terima kasih!</b> Pendaftaran Anda berhasil dikirim dan sedang diverifikasi panitia PMB.";
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        alert("Pendaftaran berhasil dikirim!");
+      });
+    })();
+  </script>
+
+</body>
+</html>
